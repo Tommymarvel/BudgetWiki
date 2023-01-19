@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<h1 class="title is-3 has-text-centered mt-5">Transaction</h1>
+<div id="entities" class="box"> <% @entities.each do |entity| %>
+    <div class="media m-6">
+      <div class="media-left">
+        <figure class="image is-64x64 margin-4"> <img src="https://cdn.onlinewebfonts.com/svg/img_218090.png" alt="image">
+        </figure>
+      </div>
+      <div class="media-content"> <strong><%= entity.name %><strong>
+            <div class="has-text-right"> <span>$<span><%= entity.amount %> </div>
+              </div>
+            </div>
+            <p class="ml-6"><%= entity.created_at.strftime("%d %h %Y")%> at <%= entity.created_at.strftime("%l.%M%P")%>
+</p>
+          <% end %>
+        </div>
+        <div class="buttons is-centered"> <%= link_to "Add New Transaction", new_entity_path, class: "button is-link is-light is-rounded is-normal" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
