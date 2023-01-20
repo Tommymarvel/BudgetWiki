@@ -1,12 +1,14 @@
 <div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
-
+  <div class="card">
+    <div class="media-left">
+      <figure class="is-128x10 m-4" >
+        <%= image_tag(category.image) %>
+      </figure>
+    </div>
+    <div class="media-content m-4">
+      <strong> <%= category.name %></strong>
+      <p class="is-small"> <%= category.created_at.strftime('%d %b %Y') %></p>
+    </div>
+  </div>
 </div>
+<footer></footer>

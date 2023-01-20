@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <h1 class="title is-3 has-text-centered mt-5">Transaction</h1>
+<%= link_to "Back", categories_path, class: "button is-danger is-rounded is-small
+" %>
 <div id="entities" class="box"> <% @entities.each do |entity| %>
     <div class="media m-6">
       <div class="media-left">
@@ -11,10 +13,13 @@
               </div>
             </div>
             <p class="ml-6"><%= entity.created_at.strftime("%d %h %Y")%> at <%= entity.created_at.strftime("%l.%M%P")%>
-</p>
+            </p>
+            <%= link_to 'Delete', category_entity_path(entity.category.id, entity.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-danger" %>
+
           <% end %>
         </div>
-        <div class="buttons is-centered"> <%= link_to "Add New Transaction", new_entity_path, class: "button is-link is-light is-rounded is-normal" %>
+        <div class="buttons is-centered">
+          <%= link_to "Add New Transaction", new_category_entity_path(@category.id), class: "button is-link is-light is-rounded is-normal" %>
         </div>
       </div>
     </div>

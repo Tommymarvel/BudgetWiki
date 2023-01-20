@@ -1,9 +1,7 @@
 <h1>New entity</h1>
-
-<%= render "form", entity: @entity %>
-
+<%= render "entities/form", {entity: @entity, category: @category} %>
 <br>
-
 <div>
-  <%= link_to "Back to entities", entities_path %>
+  <%= link_to "Back to entities", category_entities_path(@category)
+ %>
 </div>

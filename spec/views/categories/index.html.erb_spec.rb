@@ -5,11 +5,11 @@ RSpec.describe 'categories/index', type: :view do
     assign(:categories, [
              Category.create!(
                name: 'Name',
-               icon: ''
+               image: ''
              ),
              Category.create!(
                name: 'Name',
-               icon: ''
+               image: ''
              )
            ])
   end

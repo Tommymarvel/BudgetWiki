@@ -4,7 +4,7 @@ RSpec.describe 'categories/edit', type: :view do
   let(:category) do
     Category.create!(
       name: 'MyString',
-      icon: ''
+      image: ''
     )
   end
 
@@ -18,7 +18,7 @@ RSpec.describe 'categories/edit', type: :view do
     assert_select 'form[action=?][method=?]', category_path(category), 'post' do
       assert_select 'input[name=?]', 'category[name]'
 
-      assert_select 'input[name=?]', 'category[icon]'
+      assert_select 'input[name=?]', 'category[image]'
     end
   end
 end

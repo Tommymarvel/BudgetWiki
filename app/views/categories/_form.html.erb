@@ -16,12 +16,14 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
+  <strong>Upload an image...</strong>
+<div class="">
+  <%= form.label :image %>
+  <%= form.file_field :image, required: true, class:"input-file"%>
+</div>
+
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Save' %>
   </div>
 <% end %>
