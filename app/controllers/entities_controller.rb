@@ -1,12 +1,19 @@
 class EntitiesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_entity, only: %i[show edit update destroy]
 
-  # GET /entities or /entities.json
- def index
-  @category = Category.find(params[:category_id])
-  @entities = @category.entities
-end
-
+  def index
+    @category = Category.find_by(id: params[:category_id])
+    if @category
+      @entities = @category.entities
+    else
+      flash[:alert] = 'Invalid category id'
+      redirect_to categories_path
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = 'Invalid category id'
+    redirect_to categories_path
+  end
 
   # GET /entities/1 or /entities/1.json
   def show; end
@@ -20,15 +27,16 @@ end
   # GET /entities/1/edit
   def edit; end
 
-  # POST /entities or /entities.json
+  # POST /entities or /entities.js  before_action :authenticate_user!on
   def create
     @entity = Entity.new(entity_params)
+    @entity.user_id = current_user.id
 
     respond_to do |format|
       if @entity.save
         @category_entity = CategoryEntity.new(category_id: params[:category_id], entity_id: @entity.id)
-    @category_entity.save
-        format.html { redirect_to category_entities_path(category_id: params[:category_id]), notice: 'Entity was successfully created.' }
+        @category_entity.save
+        format.html { redirect_to category_entities_path(params[:category_id]), notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }

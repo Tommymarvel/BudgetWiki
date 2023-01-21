@@ -1,28 +1,30 @@
 <p style="color: green"><%= notice %></p>
-<h1 class="title is-3 has-text-centered mt-5">Categories</h1>
-<div class="container">
-  <% @categories.each do |category| %>
-    <div class="block m-6 has-background-info-light p-5 ">
-      <div class="media-left">
-        <figure class="image is-64x64 margin-4">
-          <% if category.present? && category.image.attached? %>
-            <%= image_tag(category.image) %>
-          <% end %>
-        </figure>
-      </div>
-      <div class="media-content">
-        <strong>    <%= link_to category.name, category_entities_path(category) %>
-        </strong>
-      </div>
-      <p class="m-4">
-        <%= link_to "Show this category", category, class: "button is-danger is-rounded is-small
-" %>
-      </p>
-    </div>
-  <% end %>
-</div>
-<footer>
-<div class="buttons is-centered">
-  <%= link_to "Add New Category", new_category_path, class: "button is-link is-light is-rounded is-normal" %>
-<footer>
+<%= button_to "Log Out", destroy_user_session_path, class: "button is-link is-rounded is-normal is-danger", method: :delete, data:{turbo:false} %>
 
+  <h1 class="title is-3 has-text-centered mt-5">Categories</h1>
+  <div class="container">
+    <% @categories.each do |category| %>
+      <div class="block m-6 has-background-info-light p-5 ">
+        <div class="media-left">
+          <figure class="image is-64x64 margin-4">
+            <% if category.present? && category.image.attached? %>
+              <%= image_tag(category.image) %>
+            <% end %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <strong>    <%= link_to category.name, category_entities_path(category) %>
+          </strong>
+        </div>
+        <p class="m-4">
+          <%= link_to "Show this category", category, class: "button is-danger is-rounded is-small
+" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <footer>
+    <div class="buttons is-centered">
+      <%= link_to "Add New Category", new_category_path, class: "button is-link is-light is-rounded is-normal" %>
+    </div>
+    <footer>

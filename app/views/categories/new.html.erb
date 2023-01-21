@@ -1,9 +1,14 @@
-<h1>New category</h1>
-
+<h1 class="text-center">New category</h1>
+<div class="text-center"
+>
 <%= render "form", category: @category %>
+
+</div>
+
 
 <br>
 
-<div>
-  <%= link_to "Back to categories", categories_path %>
+<div class="text-center ms-4">
+  <%= link_to "Back to categories", categories_path, class:"btn btn-primary"
+%>
 </div>
