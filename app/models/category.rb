@@ -5,7 +5,7 @@ class Category < ApplicationRecord
   validates :name, presence: true
   validates :image, presence: true
 
-def total_amount
+  def total_amount
     entities.sum(:amount)
   end
 
