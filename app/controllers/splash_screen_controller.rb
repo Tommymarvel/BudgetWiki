@@ -1,5 +1,5 @@
 class SplashScreenController < ApplicationController
-    before_action :some_method, only: [:index]
+  before_action :some_method, only: [:index]
   def some_method
     return unless user_signed_in?
 

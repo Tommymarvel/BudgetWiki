@@ -26,7 +26,6 @@
   padding: 5px;
 }
 
-
 .notification:not(:last-child) {
   margin-bottom: 0;
 }
@@ -92,24 +91,27 @@ $button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
   }
 }
 
-
 .fa-arrow-left {
   color: #ffff;
   font-size: large;
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 .image-container {
   height: 100px;
+
   /* set the desired height */
   overflow: hidden;
+
   /* hide any overflow */
 }
 
 .image-height {
   height: 100%;
+
   /* set the height of the image to 100% of the container */
   width: 100%;
+
   /* maintain the aspect ratio of the image */
 }
 
@@ -117,4 +119,10 @@ $button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
   width: 70%;
   margin-left: 15%;
   color: #434b54;
+}
+
+.trash {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
 }

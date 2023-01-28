@@ -1,11 +1,15 @@
-<h1 class="text-center">New entity</h1>
+<div class="d-flex bg-dark-blue justify-content-between p-3">
+  <div class=" ms-4">
+    <%= link_to category_entities_path(@category), class: 'btn-back mt-2' do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+  <h1 class="d-flex text-light mr-6 flex-grow-1 justify-content-center">New Entity</h1>
+</div>
+
 <div class="text-center mt-4">
 <%= render "entities/form", {entity: @entity, category: @category} %>
 
 </div>
 
-<br>
-<div class="text-center ms-4 mt-4">
-  <%= link_to "Back to entities", category_entities_path(@category), class:"btn btn-primary"
- %>
 </div>

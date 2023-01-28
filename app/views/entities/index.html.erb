@@ -1,28 +1,32 @@
+<div class="d-flex bg-dark-blue justify-content-between p-3">
+  <div class=" ms-4">
+    <%= link_to categories_path, class: 'btn-back mt-2' do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+  <h1 class="d-flex text-light mr-6 flex-grow-1 justify-content-center">Transaction</h1>
+</div>
+</div>
 <p style="color: green"><%= notice %></p>
-<h1 class="title is-3 has-text-centered mt-5">Transaction</h1>
-<%= link_to "Back", categories_path, class: "button is-danger is-rounded is-small" %>
-<div id="entities" class="box">
-  <% @entities.each do |entity| %>
-    <div class="media m-6">
-      <div class="media-left">
-        <figure class="image is-64x64 margin-4">
-          <img src="https://cdn.onlinewebfonts.com/svg/img_218090.png" alt="image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <strong><%= entity.name %></strong>
-        <div class="has-text-right">
-          <span>$<span><%= entity.amount %> </div>
+<% @entities.each do |entity| %>
+  <div class=" main category d-flex border mb-1 p-3 mx-auto w-70">
+    <div class="logo me-3 col-2 image-container">
+      <img src="https://cdn.onlinewebfonts.com/svg/img_218090.png" alt="image">
+    </div>
+    <div class="col-5">
+      <strong><%= entity.name %></strong>
+      <p class="mt-4">
+        <%= entity.created_at.strftime("%d %h %Y")%> at <%= entity.created_at.strftime("%l.%M%P")%>
+      </p>
+    </div>
+    <div class="col-5 d-flex justify-content-end align-items-center pe-3">
+      <strong><span>$<span><%= entity.amount %><strong>
+            </div>
           </div>
         </div>
-        <p class="ml-6">
-          <%= entity.created_at.strftime("%d %h %Y")%> at <%= entity.created_at.strftime("%l.%M%P")%>
-        </p>
-      </div>
-    <% end%>
-    <div class="buttons is-centered">
-      <%= link_to "Add New Transaction", new_category_entity_path(@category.id), class: "button is-link is-light is-rounded is-normal" %>
-    </div>
-  </div>
-</div>
-</div>
+      <% end %>
+      <footer>
+        <div class="footer text-light d-flex justify-content-center p-3 bg-success fixed-bottom">
+          <%= link_to "Add New Transaction", new_category_entity_path(@category.id), class: "btn border border-light pr-6 pl-6 text-light" %>
+        </div>
+      </footer>

@@ -1,6 +1,14 @@
-<%= render "shared/navbar" %>
+<nav class="bg-dark-blue navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <h2 class="navbar-brand text-center mx-auto fs-2 fw-bolder
+">Categories</h2>
+    <%= button_to destroy_user_session_path, class:"btn", method: :delete do %>
+      <i class="fa fa-power-off text-danger"></i>
+    <% end %>
+  </div>
+</div>
+</nav>
 <p style="color: green"><%= notice %></p>
-<h1 class="title is-3 has-text-centered mt-5">Categories</h1>
 <% @categories.each do |category| %>
   <div class=" main category d-flex border mb-1 p-3 mx-auto w-70">
     <div class="logo me-3 col-2 image-container">
@@ -10,15 +18,14 @@
     </div>
     <div class="col-5">
       <strong><%= link_to category.name, category_entities_path(category), class: 'text-decoration-none'%></strong>
+      <p class="mt-4"> <%= category.created_at.strftime('%d %b %Y') %></p>
+      <strong><%= category.total_amount %></strong>
+
     </div>
-    <%# <p class="m-4">
-          <%= link_to "Show this category", category, class: "button is-danger is-rounded is-small" %>
-    <%# </p> %>
   </div>
 <% end %>
-</div>
 <footer>
-  <div class="text-light footer d-flex justify-content-center p-3 bg-success mt-5">
+  <div class="footer text-light d-flex justify-content-center p-3 bg-success mt-5 fixed-bottom">
     <%= link_to "Add New Category", new_category_path, class: "btn border border-light pr-6 pl-6 text-light
 " %>
   </div>
