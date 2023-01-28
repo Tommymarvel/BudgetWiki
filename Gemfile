@@ -90,5 +90,5 @@ end
 gem 'cancancan'
 gem 'devise'
 gem 'load_and_authorize_resource'
-gem 'rswag'
 gem 'factory_bot_rails'
+
