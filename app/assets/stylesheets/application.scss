@@ -116,8 +116,7 @@ $button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
 }
 
 .main {
-  width: 70%;
-  margin-left: 15%;
+  margin: 10px;
   color: #434b54;
 }
 
@@ -125,4 +124,10 @@ $button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
   background-color: transparent;
   border: none;
   margin-left: auto;
+}
+
+$green: #60B524;
+
+.bg-green {
+  background-color: $green;
 }

@@ -10,7 +10,7 @@
 </nav>
 <p style="color: green"><%= notice %></p>
 <% @categories.each do |category| %>
-  <div class=" main category d-flex border mb-1 p-3 mx-auto w-70">
+  <div class=" main category d-flex border mb-1 p-3 w-70">
     <div class="logo me-3 col-2 image-container">
       <% if category.present? && category.image.attached? %>
         <%= image_tag(category.image, class: "image-height") %>
@@ -28,7 +28,7 @@
   </div>
 <% end %>
 <footer>
-  <div class="footer text-light d-flex justify-content-center p-3 bg-success mt-5 fixed-bottom">
+  <div class="footer text-light d-flex justify-content-center p-3 bg-green mt-5 fixed-bottom">
     <%= link_to "Add New Category", new_category_path, class: "btn border border-light pr-6 pl-6 text-light
 " %>
   </div>

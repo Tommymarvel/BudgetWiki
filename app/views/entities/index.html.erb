@@ -9,7 +9,7 @@
 </div>
 <p style="color: green"><%= notice %></p>
 <% @entities.each do |entity| %>
-  <div class=" main category d-flex border mb-1 p-3 mx-auto w-70">
+  <div class=" main category d-flex border mb-1 p-3 w-70">
     <div class="logo me-3 col-2 image-container">
       <img src="https://cdn.onlinewebfonts.com/svg/img_218090.png" alt="image">
     </div>
@@ -26,7 +26,7 @@
         </div>
       <% end %>
       <footer>
-        <div class="footer text-light d-flex justify-content-center p-3 bg-success fixed-bottom">
+        <div class="footer text-light d-flex justify-content-center p-3 bg-green fixed-bottom">
           <%= link_to "Add New Transaction", new_category_entity_path(@category.id), class: "btn border border-light pr-6 pl-6 text-light" %>
         </div>
       </footer>
