@@ -1,27 +1,49 @@
-<h2 class="text-center">Sign up</h2>
+<div class="bg-dark-blue">
+  <h2 class="text-center p-4 text-light">Register</h2>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-  <div class="form-inputs m-4">
-    <%= f.input :name,
+  <div class="card w-50 mx-auto m-4 text-dark-light
+">
+    <div class="form-group m-2">
+      <%= f.text_field :name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "name" }%>
-    <%= f.input :email,
+                class:"form-control",
+                placeholder: "Name",
+                 autocomplete: "name"%>
+    </div>
+    <div class="form-group m-2">
+      <%= f.email_field :email,
                 required: true,
+                class:"form-control",
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+                placeholder: "Email",
+                autocomplete: "email"%>
+    </div>
+    <div class="form-group m-2">
+      <%= f.password_field :password,
                 required: true,
+                class:"form-control",
+                placeholder: "Password",
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                autocomplete: "new-password"%>
+    </div>
+    <div class="form-group m-2">
+      <%= f.password_field :password_confirmation,
+                class:"form-control",
+                placeholder: "Password confirmation",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    </div>
   </div>
-  <div class="form-actions ms-4">
-    <%= f.button :submit, "Sign up", data:{turbo:false}, class:"btn btn-primary"%>
+  <div class="form-actions has-text-centered
+">
+    <%= f.button :submit, "Sign up", data:{turbo:false}, class:"btn btn-primary
+"%>
   </div>
 <% end %>
-<div class="ms-4">
-  <%= render "devise/shared/links" %>
+<div class="has-text-centered m-2
+">
+<span>Have account already?</span><%= render "devise/shared/links" %>
 </div>

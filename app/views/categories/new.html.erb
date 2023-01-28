@@ -1,14 +1,14 @@
-<h1 class="text-center">New category</h1>
+<div class="d-flex bg-dark-blue justify-content-between">
+  <div class=" ms-4">
+    <%= link_to categories_path, class: 'btn-back mt-2' do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+  <h1 class="d-flex text-light mr-6 flex-grow-1 justify-content-center">New category</h1>
+</div>
 <div class="text-center"
 >
-<%= render "form", category: @category %>
-
+  <%= render "form", category: @category %>
 </div>
-
-
 <br>
-
-<div class="text-center ms-4">
-  <%= link_to "Back to categories", categories_path, class:"btn btn-primary"
-%>
 </div>

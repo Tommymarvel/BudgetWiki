@@ -1,25 +1,38 @@
-<h2 class="text-center">Log in</h2>
-
+<div class="bg-dark-blue">
+  <h2 class="text-center p-4 text-light
+">Log in</h2>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs m-4">
-    <%= f.input :email,
-                required: false,
+  <div class="w-50 mx-auto m-4">
+    <div class="form-group m-2">
+      <%= f.email_field :email,
+                required: true,
+                class:"form-control",
                 autofocus: true,
-                input_html: { autocomplete: "email" }
-                %>
-    <%= f.input :password,
+                placeholder: "Email",
+                autocomplete: "email"%>
+    </div>
+    <div class="form-group m-2">
+      <%= f.password_field :password,
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                class:"form-control",
+                placeholder: "Password",
+                autocomplete: "current-password"
+
+                 %>
+    </div>
+    <div class="form-group m-2">
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
   </div>
 
-  <div class="form-actions ms-4">
-    <%= f.button :submit, "Log in", data:{turbo:false}, class:"btn btn-primary"
+  <div class="form-actions m-2 has-text-centered">
+    <%= f.button :submit, "Log in", data:{turbo:false}, class:"btn btn-primary "
  %>
   </div>
 <% end %>
-<div class="ms-4">
+<div class="has-text-centered
+ m-2">
+  <span>Don't have account?</span>
 <%= render "devise/shared/links" %>
-
 </div>
-

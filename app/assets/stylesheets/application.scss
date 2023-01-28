@@ -15,25 +15,41 @@
  */
 @import "bulma";
 
-.navbar-brand .title {
-  color: white;
+.nav {
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 500;
+  margin-right: 3rem;
 }
 
 .navbar-end {
   padding: 5px;
 }
 
-// // round images
-// .image {
-//   border-radius: 50%;
-
-//   img {
-//     border-radius: 50%;
-//   }
-// }
 
 .notification:not(:last-child) {
   margin-bottom: 0;
+}
+
+$bootstrap-blue-shades: (
+  "dark": #3778c2
+);
+
+$bootstrap-dark-shades: (
+  "light": #434b54
+);
+
+.bg-dark-blue {
+  background-color: map-get($bootstrap-blue-shades, "dark");
+}
+
+.btn-dark-blue {
+  background-color: map-get($bootstrap-blue-shades, "dark");
+  color: #ffff;
+}
+
+.text-dark-light {
+  color: map-get($bootstrap-dark-shades, "light");
 }
 
 $button-color: #f76957;
@@ -76,20 +92,29 @@ $button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
   }
 }
 
-$table-row-hover-background-color: #983636;
-$table-cell-text-align: center;
-$table-head-background-color: #626262;
 
-.table {
-  text-align: $table-cell-text-align;
+.fa-arrow-left {
+  color: #ffff;
+  font-size: large;
+  margin-top: 3px
+}
 
-  .thead {
-    tr {
-      th {
-        background-color: $table-head-background-color;
-        color: whitesmoke;
-        text-align: $table-cell-text-align;
-      }
-    }
-  }
+.image-container {
+  height: 100px;
+  /* set the desired height */
+  overflow: hidden;
+  /* hide any overflow */
+}
+
+.image-height {
+  height: 100%;
+  /* set the height of the image to 100% of the container */
+  width: 100%;
+  /* maintain the aspect ratio of the image */
+}
+
+.main {
+  width: 70%;
+  margin-left: 15%;
+  color: #434b54;
 }
