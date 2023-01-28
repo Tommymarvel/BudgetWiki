@@ -19,9 +19,12 @@
     <div class="col-5">
       <strong><%= link_to category.name, category_entities_path(category), class: 'text-decoration-none'%></strong>
       <p class="mt-4"> <%= category.created_at.strftime('%d %b %Y') %></p>
-      <strong><%= category.total_amount %></strong>
-
     </div>
+    <div class="col-5 d-flex justify-content-end align-items-center pe-3">
+  <strong><span>$<span><%= category.total_amount %>
+<strong>
+        </div>
+
   </div>
 <% end %>
 <footer>
