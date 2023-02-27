@@ -50,7 +50,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖  Budget App <a name="about-project"></a>
+# 📖  BudgetWiki <a name="about-project"></a>
 
 > This is a budget app where you can setup your different budgets and you can create different categories and also delete your own categories and also create new transactions and also delete your own transactions.
 
